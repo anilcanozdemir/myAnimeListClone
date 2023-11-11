@@ -1,9 +1,6 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +9,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "anime_producer")
 public class AnimeProducer {
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     @ManyToOne
     @JoinColumn(name = "anime_id")
     private Anime anime;

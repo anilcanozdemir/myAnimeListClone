@@ -1,13 +1,11 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import com.myanimelist.myAnimeListClone.Enums.AnimeType;
-import com.myanimelist.myAnimeListClone.Enums.Genre;
-import com.myanimelist.myAnimeListClone.Enums.Theme;
-import com.myanimelist.myAnimeListClone.Enums.Demographic;
+import com.myanimelist.myAnimeListClone.Enums.*;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.ManyToAny;
 
 import java.util.Date;
 import java.util.List;
@@ -25,43 +23,62 @@ public class Anime {
      */
     @Column
     @Enumerated(EnumType.STRING)
-    AnimeType animeType;
+    private AnimeType animeType;
     @Column
-    Long episode;
+    private Long episode;
     @Column
-    Date startDate;
+    private Date startDate;
     @Column
-    Date finalDate;
+    private Date finalDate;
     @Column
-    String broadcastTime;
-    @Column
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
-    List<AnimeProducer> animeProducers;
+    private String broadcastTime;
     @Column
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
-    List<AnimeLicensor> animeLicensors;
+    private List<AnimeProducer> animeProducers;
     @Column
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
-    List<AnimeStudio> animeStudios;
+    private List<AnimeLicensor> animeLicensors;
     @Column
-    String source;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
+    private List<AnimeStudio> animeStudios;
     @Column
-    List<Genre> genreList;
+    private String source;
     @Column
-    Theme theme;
+    private List<Genre> genreList;
     @Column
-    Demographic demographic;
+    @Enumerated(EnumType.STRING)
+    private Theme theme;
     @Column
-    String duration;
+    @Enumerated(EnumType.STRING)
+    private Demographic demographic;
     @Column
-    String Rating;
+    private String duration;
+    @Column
+    private String rating;
+    @Column
+    private String title;
+    @Column
+    @OneToMany(mappedBy = "anime")
+    private List<Title> alternativeTitles;
+    @Column
+    private String synopsis;
+    @Column
+    @OneToMany(mappedBy = "anime")
+    private List<AnimeCharacter> animeCharacters;
+    @Column
+    @OneToMany(mappedBy = "anime")
+    private List<VoiceActor> voiceActors;
+    @Column
+    @OneToMany(mappedBy = "anime")
+    private List<Staff> staffs;
+    @Column
+    @ManyToAny
+    private List<Anime> relatedAnime;
+
+
     /*
-    TODO Alternative Titles
-    TODO Synopsis
     TODO Background
     TODO Related Anime
-    TODO Characters & Voice Actors
-    TODO Staff
     TODO Opening Theme
     TODO Ending Theme
     TODO Reviews
