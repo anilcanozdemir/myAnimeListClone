@@ -1,8 +1,14 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -13,8 +19,20 @@ public class AnimeLicensor {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "anime_id")
-    private Anime anime;
-
+    @Column
+    private String japaneseName;
+    @Column
+    private String synonyms;
+    @Column
+    private Date establishedDate;
+    @Column
+    private Date dissolvedDate;
+    @Column
+    private String information;
+    @Column
+    private String availableAt;
+    @Column
+    private String resources;
+    @Column
+    private String logoUrl;
 }

@@ -5,7 +5,6 @@ import com.myanimelist.myAnimeListClone.Enums.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ManyToAny;
 
 import java.util.Date;
 import java.util.List;
@@ -36,7 +35,10 @@ public class Anime {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
     private List<AnimeProducer> animeProducers;
     @Column
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "anime_animeLicensors",
+            joinColumns = @JoinColumn(name = "anime_id"))
+
     private List<AnimeLicensor> animeLicensors;
     @Column
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
@@ -63,8 +65,10 @@ public class Anime {
     @Column
     private String synopsis;
     @Column
-    @OneToMany(mappedBy = "anime")
-    private List<AnimeCharacter> animeCharacters;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "anime_Characters",
+            joinColumns = @JoinColumn(name = "anime_id"))
+    private List<Character> Characters;
     @Column
     @OneToMany(mappedBy = "anime")
     private List<VoiceActor> voiceActors;
@@ -72,16 +76,20 @@ public class Anime {
     @OneToMany(mappedBy = "anime")
     private List<Staff> staffs;
     @Column
-    @ManyToAny
+    @ManyToMany
     private List<Anime> relatedAnime;
-
+    @Column
+    private String background;
+    @Column
+    private String posterUrl;
+    @OneToMany(mappedBy = "anime")
+    @Column
+    private List<Review> reviews;
 
     /*
-    TODO Background
-    TODO Related Anime
+
     TODO Opening Theme
     TODO Ending Theme
-    TODO Reviews
      */
 
 }

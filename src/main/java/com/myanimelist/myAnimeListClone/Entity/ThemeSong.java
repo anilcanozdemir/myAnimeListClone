@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "anime_character")
-public class AnimeCharacter {
+@Table(name = "theme_song")
+public class ThemeSong {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
