@@ -12,7 +12,7 @@ public class AnimeProducer {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-
+    private String name;
     @ManyToOne
     @JoinColumn(name = "anime_id")
     private Anime anime;
