@@ -1,14 +1,12 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -35,4 +33,7 @@ public class AnimeLicensor {
     private String resources;
     @Column
     private String logoUrl;
+    @Column
+    @ManyToMany
+    private List<Anime> animeList;
 }
