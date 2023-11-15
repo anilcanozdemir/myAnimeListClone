@@ -16,6 +16,7 @@ import java.util.List;
 public class Anime {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /*
     Information
@@ -40,8 +41,10 @@ public class Anime {
             joinColumns = @JoinColumn(name = "anime_id"))
 
     private List<AnimeLicensor> animeLicensors;
-    @Column
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime")
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "anime_animeStudios",
+            joinColumns = @JoinColumn(name = "anime_id"))
     private List<AnimeStudio> animeStudios;
     @Column
     private String source;
