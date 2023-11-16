@@ -6,15 +6,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "theme_song")
-public class ThemeSong {
+@MappedSuperclass
+public class Item {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "anime_id")
-    private Anime anime;
+    @Column
+    private Type type;
 
 }
