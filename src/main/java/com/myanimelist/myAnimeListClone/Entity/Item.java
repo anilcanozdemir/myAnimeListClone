@@ -13,6 +13,6 @@ public class Item {
     @Column(name = "id", nullable = false)
     private Long id;
     @Column
-    private Type type;
+
 
 }
