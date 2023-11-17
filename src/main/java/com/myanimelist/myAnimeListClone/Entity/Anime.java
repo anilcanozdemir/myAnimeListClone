@@ -1,7 +1,7 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.myanimelist.myAnimeListClone.Enums.AnimeType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,4 +10,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "anime")
 public class Anime extends Item {
+    @Column
+    @Enumerated(EnumType.STRING)
+
+    private AnimeType animeType;
+    @Column
+
+    private Integer durationByMinute;
 }

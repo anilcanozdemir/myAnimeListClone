@@ -1,7 +1,7 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.myanimelist.myAnimeListClone.Enums.MangaType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,4 +10,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "manga")
 public class Manga extends Item {
+    @Column
+    @Enumerated(EnumType.STRING)
+    private MangaType mangaType;
+    private Magazine serializationMagazine;
+
+
 }
