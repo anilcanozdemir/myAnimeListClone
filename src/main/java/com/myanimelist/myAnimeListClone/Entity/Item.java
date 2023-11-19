@@ -39,5 +39,5 @@ public class Item {
     @Enumerated(EnumType.STRING)
 
     private Demographic demographic;
-
+    private String snopsis;
 }
