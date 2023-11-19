@@ -13,6 +13,8 @@ public class Manga extends Item {
     @Column
     @Enumerated(EnumType.STRING)
     private MangaType mangaType;
+    @ManyToOne
+    @JoinColumn(name = "serialization_magazine_id")
     private Magazine serializationMagazine;
 
 
