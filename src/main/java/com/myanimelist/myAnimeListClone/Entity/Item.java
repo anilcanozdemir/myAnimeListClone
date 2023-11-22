@@ -9,6 +9,7 @@ import lombok.Setter;
 
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -37,7 +38,13 @@ public class Item {
     private Theme theme;
     @Column
     @Enumerated(EnumType.STRING)
-
     private Demographic demographic;
+    @Column
     private String snopsis;
+    @Column
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "item_characters",
+            joinColumns = @JoinColumn(name = "item_id"))
+
+    private List<ItemCharacter> characters;
 }
