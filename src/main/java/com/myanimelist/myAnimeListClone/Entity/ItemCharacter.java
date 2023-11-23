@@ -22,10 +22,16 @@ public class ItemCharacter {
             joinColumns = @JoinColumn(name = "character_id"))
     private List<Anime> animeList;
 
-    @Column
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "manga_characters",
             joinColumns = @JoinColumn(name = "character_id"))
     private List<Manga> mangaList;
+    @Column
+    private String description;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "ıtem_character_voiceActors",
+            joinColumns = @JoinColumn(name = "itemCharacter_id"))
+    private List<VoiceActor> voiceActors;
 
 }
