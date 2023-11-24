@@ -29,9 +29,12 @@ public class ItemCharacter {
     private List<Manga> mangaList;
     @Column
     private String description;
+    @Column
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "ıtem_character_voiceActors",
             joinColumns = @JoinColumn(name = "itemCharacter_id"))
     private List<VoiceActor> voiceActors;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "itemCharacter")
+    private List<CharacterPic> characterPicList;
 
 }
