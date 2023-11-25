@@ -1,5 +1,6 @@
-package com.myanimelist.myAnimeListClone.Entity;
+package com.myanimelist.myAnimeListClone.Entity.Item;
 
+import com.myanimelist.myAnimeListClone.Entity.Genre;
 import com.myanimelist.myAnimeListClone.Enums.Demographic;
 import com.myanimelist.myAnimeListClone.Enums.ItemStatus;
 import com.myanimelist.myAnimeListClone.Enums.Theme;

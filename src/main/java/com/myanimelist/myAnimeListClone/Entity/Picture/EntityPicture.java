@@ -1,4 +1,4 @@
-package com.myanimelist.myAnimeListClone.Entity;
+package com.myanimelist.myAnimeListClone.Entity.Picture;
 
 import jakarta.persistence.*;
 import lombok.Getter;

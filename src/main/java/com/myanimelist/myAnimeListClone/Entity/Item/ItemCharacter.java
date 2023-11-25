@@ -1,5 +1,8 @@
-package com.myanimelist.myAnimeListClone.Entity;
+package com.myanimelist.myAnimeListClone.Entity.Item;
 
+import com.myanimelist.myAnimeListClone.Entity.Anime;
+import com.myanimelist.myAnimeListClone.Entity.Picture.CharacterPic;
+import com.myanimelist.myAnimeListClone.Entity.VoiceActor;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

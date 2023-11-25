@@ -1,5 +1,6 @@
-package com.myanimelist.myAnimeListClone.Entity;
+package com.myanimelist.myAnimeListClone.Entity.Item;
 
+import com.myanimelist.myAnimeListClone.Entity.Company.Magazine;
 import com.myanimelist.myAnimeListClone.Enums.MangaType;
 import jakarta.persistence.*;
 import lombok.Getter;

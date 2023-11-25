@@ -1,5 +1,6 @@
 package com.myanimelist.myAnimeListClone.Entity;
 
+import com.myanimelist.myAnimeListClone.Entity.Item.Item;
 import com.myanimelist.myAnimeListClone.Enums.AnimeType;
 import jakarta.persistence.*;
 import lombok.Getter;
