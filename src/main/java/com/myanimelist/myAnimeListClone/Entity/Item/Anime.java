@@ -1,4 +1,4 @@
-package com.myanimelist.myAnimeListClone.Entity;
+package com.myanimelist.myAnimeListClone.Entity.Item;
 
 import com.myanimelist.myAnimeListClone.Entity.Item.Item;
 import com.myanimelist.myAnimeListClone.Enums.AnimeType;

@@ -1,6 +1,7 @@
-package com.myanimelist.myAnimeListClone.Entity.Item;
+package com.myanimelist.myAnimeListClone.Entity;
 
-import com.myanimelist.myAnimeListClone.Entity.Anime;
+import com.myanimelist.myAnimeListClone.Entity.Item.Anime;
+import com.myanimelist.myAnimeListClone.Entity.Item.Manga;
 import com.myanimelist.myAnimeListClone.Entity.Picture.CharacterPic;
 import com.myanimelist.myAnimeListClone.Entity.VoiceActor;
 import jakarta.persistence.*;

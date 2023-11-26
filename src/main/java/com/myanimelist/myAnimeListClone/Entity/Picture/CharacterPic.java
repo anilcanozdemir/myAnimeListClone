@@ -1,6 +1,6 @@
 package com.myanimelist.myAnimeListClone.Entity.Picture;
 
-import com.myanimelist.myAnimeListClone.Entity.Item.ItemCharacter;
+import com.myanimelist.myAnimeListClone.Entity.ItemCharacter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
