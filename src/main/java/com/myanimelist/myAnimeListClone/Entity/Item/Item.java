@@ -49,4 +49,6 @@ public class Item {
             joinColumns = @JoinColumn(name = "item_id"))
 
     private List<ItemCharacter> characters;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "item")
+    private List<Review> itemReviews;
 }
