@@ -16,6 +16,18 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "item_id")
+    /*TODO*/
     private Item item;
+    @Column(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+
+    private User user;
+    @Column
+    private String content;
+    @Column
+    private Integer rating;
+
+
 
 }
