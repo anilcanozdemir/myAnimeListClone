@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -18,4 +20,10 @@ public class Anime extends Item {
     @Column
 
     private Integer durationByMinute;
+
+    /*TODO Related AnimeList relation check*/
+    private Manga adaptionManga;
+    private List<Anime> alternativeVersionAnime;
+    private List<Anime> sideStoryAnimes;
+    private List<Anime> spinOfAnimes;
 }
