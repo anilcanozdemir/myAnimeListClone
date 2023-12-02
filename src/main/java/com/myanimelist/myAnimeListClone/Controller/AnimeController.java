@@ -9,8 +9,7 @@ import com.myanimelist.myAnimeListClone.DTOs.AnimeSaveRequestDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,27 +21,32 @@ public class AnimeController implements CRUDController<AnimeResponseDto, AnimeSa
 
 
     @Override
+    @PostMapping("/add")
     public ResponseEntity<Result> add(AnimeSaveRequestDto animeSaveRequestDto) {
         return null;
     }
 
     @Override
+    @GetMapping("getAll")
     public ResponseEntity<DataResult<List<AnimeResponseDto>>> getAll() {
         return null;
     }
 
     @Override
-    public ResponseEntity<DataResult<AnimeResponseDto>> getById(Long id) {
+    @GetMapping("getById")
+    public ResponseEntity<DataResult<AnimeResponseDto>> getById(@RequestParam Long id) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Result> updateById(AnimeUpdateRequestDto animeUpdateRequestDto) {
+    @PostMapping("/updateById")
+    public ResponseEntity<Result> updateById(@RequestBody AnimeUpdateRequestDto animeUpdateRequestDto,@RequestParam Long id) {
         return null;
     }
 
     @Override
-    public ResponseEntity<DataResult<AnimeResponseDto>> deleteById(Long id) {
+    @DeleteMapping("/deleteById")
+    public ResponseEntity<DataResult<AnimeResponseDto>> deleteById(@RequestParam Long id) {
         return null;
     }
 }
