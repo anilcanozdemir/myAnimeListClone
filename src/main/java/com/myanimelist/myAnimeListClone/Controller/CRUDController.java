@@ -15,7 +15,7 @@ public interface CRUDController<EntityResponseDto, EntitySaveRequestDto, EntityU
 
     public ResponseEntity<DataResult<EntityResponseDto>> getById(Long id);
 
-    public ResponseEntity<Result> updateById(EntityUpdateRequestDto entityUpdateRequestDto);
+    public ResponseEntity<Result> updateById(EntityUpdateRequestDto entityUpdateRequestDto,Long id);
 
     public ResponseEntity<DataResult<EntityResponseDto>> deleteById(Long id);
 }
