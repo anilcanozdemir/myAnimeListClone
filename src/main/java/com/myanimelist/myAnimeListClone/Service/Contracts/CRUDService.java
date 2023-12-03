@@ -2,6 +2,9 @@ package com.myanimelist.myAnimeListClone.Service.Contracts;
 
 
 
+import com.myanimelist.myAnimeListClone.Core.Result.DataResult;
+import com.myanimelist.myAnimeListClone.Core.Result.Result;
+
 import java.util.List;
 
 public interface CRUDService<EntityResponseDto, EntitySaveRequestDto, EntityUpdateRequestDto> {
@@ -14,5 +17,5 @@ public interface CRUDService<EntityResponseDto, EntitySaveRequestDto, EntityUpda
 
     DataResult<EntityResponseDto> getById(Long id);
 
-    Result updateById(EntityUpdateRequestDto entityUpdateRequestDto);
+    Result updateById(EntityUpdateRequestDto entityUpdateRequestDto,Long id);
 }
