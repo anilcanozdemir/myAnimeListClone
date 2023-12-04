@@ -16,9 +16,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AnimeManager implements AnimeService {
     private final AnimeRepository animeRepository;
+    private final ModelMapper modelMapper;
 
     @Override
     public Result add(AnimeSaveRequestDto animeSaveRequestDto) {
+
         return null;
     }
 

@@ -1,7 +1,6 @@
 package com.myanimelist.myAnimeListClone.Controller;
 
 
-
 import com.myanimelist.myAnimeListClone.Core.Result.DataResult;
 import com.myanimelist.myAnimeListClone.Core.Result.Result;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeResponseDto;
@@ -41,7 +40,7 @@ public class AnimeController implements CRUDController<AnimeResponseDto, AnimeSa
 
     @Override
     @PostMapping("/updateById")
-    public ResponseEntity<Result> updateById(@RequestBody AnimeUpdateRequestDto animeUpdateRequestDto,@RequestParam Long id) {
+    public ResponseEntity<Result> updateById(@RequestBody AnimeUpdateRequestDto animeUpdateRequestDto, @RequestParam Long id) {
         return null;
     }
 

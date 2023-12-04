@@ -1,10 +1,8 @@
 package com.myanimelist.myAnimeListClone.Entity.Item;
 
-import com.myanimelist.myAnimeListClone.Entity.Item.Item;
 import com.myanimelist.myAnimeListClone.Enums.AnimeType;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +10,9 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "anime")
+@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Anime extends Item {
     @Column
     @Enumerated(EnumType.STRING)
@@ -26,4 +27,6 @@ public class Anime extends Item {
     private List<Anime> alternativeVersionAnime;
     private List<Anime> sideStoryAnimes;
     private List<Anime> spinOfAnimes;
+
+
 }

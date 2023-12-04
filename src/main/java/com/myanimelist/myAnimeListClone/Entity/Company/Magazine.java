@@ -1,7 +1,7 @@
 package com.myanimelist.myAnimeListClone.Entity.Company;
 
-import com.myanimelist.myAnimeListClone.Entity.Company.Company;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
