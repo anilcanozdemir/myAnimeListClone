@@ -4,7 +4,9 @@ import com.myanimelist.myAnimeListClone.DTOs.AnimeResponseDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeSaveRequestDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeUpdateRequestDto;
 import com.myanimelist.myAnimeListClone.Entity.Item.Anime;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AnimeMapper implements MapperProfile<AnimeResponseDto, AnimeSaveRequestDto, AnimeUpdateRequestDto, Anime> {
     /*TODO
 
