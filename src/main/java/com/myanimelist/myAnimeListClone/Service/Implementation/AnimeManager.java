@@ -8,7 +8,6 @@ import com.myanimelist.myAnimeListClone.DTOs.AnimeSaveRequestDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeUpdateRequestDto;
 import com.myanimelist.myAnimeListClone.Repository.AnimeRepository;
 import com.myanimelist.myAnimeListClone.Service.Contracts.AnimeService;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,7 @@ public class AnimeManager implements AnimeService {
     @Override
     public DataResult<AnimeResponseDto> deleteByid(Long id) {
         animeRepository.delete(animeRepository.findById(id).orElseThrow());
-        return  null;
+        return null;
     }
 
     @Override
