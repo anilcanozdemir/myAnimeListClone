@@ -23,31 +23,31 @@ public class AnimeController implements CRUDController<AnimeResponseDto, AnimeSa
     @Override
     @PostMapping("/add")
     public ResponseEntity<Result> add(AnimeSaveRequestDto animeSaveRequestDto) {
-        return  ResponseEntity.ok().body(animeService.add(animeSaveRequestDto));
+        return ResponseEntity.ok().body(animeService.add(animeSaveRequestDto));
     }
 
     @Override
     @GetMapping("getAll")
     public ResponseEntity<DataResult<List<AnimeResponseDto>>> getAll() {
-        return  ResponseEntity.ok().body(animeService.getAll());
+        return ResponseEntity.ok().body(animeService.getAll());
     }
 
     @Override
     @GetMapping("getById")
     public ResponseEntity<DataResult<AnimeResponseDto>> getById(@RequestParam Long id) {
-        return  ResponseEntity.ok().body(animeService.getById(id));
+        return ResponseEntity.ok().body(animeService.getById(id));
     }
 
     @Override
     @PostMapping("/updateById")
     public ResponseEntity<Result> updateById(@RequestBody AnimeUpdateRequestDto animeUpdateRequestDto, @RequestParam Long id) {
-        return  ResponseEntity.ok().body(animeService.updateById(animeUpdateRequestDto,id));
+        return ResponseEntity.ok().body(animeService.updateById(animeUpdateRequestDto, id));
     }
 
     @Override
     @DeleteMapping("/deleteById")
     public ResponseEntity<DataResult<AnimeResponseDto>> deleteById(@RequestParam Long id) {
-        return  ResponseEntity.ok().body(animeService.deleteByid(id));
+        return ResponseEntity.ok().body(animeService.deleteByid(id));
 
     }
 }
