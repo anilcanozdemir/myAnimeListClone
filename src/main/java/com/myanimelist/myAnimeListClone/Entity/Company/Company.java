@@ -7,9 +7,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @MappedSuperclass
+/*TODO
+
+ */
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    private String name;
 }
