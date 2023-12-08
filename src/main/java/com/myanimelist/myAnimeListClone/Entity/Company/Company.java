@@ -16,4 +16,5 @@ public class Company {
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
+    private String japaneseName;
 }
