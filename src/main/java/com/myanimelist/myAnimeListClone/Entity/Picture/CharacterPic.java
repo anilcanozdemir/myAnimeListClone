@@ -17,4 +17,5 @@ public class CharacterPic extends EntityPicture {
     @JoinColumn(name = "item_character_id")
     private ItemCharacter itemCharacter;
 
+
 }
