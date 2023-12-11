@@ -42,11 +42,13 @@ public class AnimeManager implements AnimeService {
 
     @Override
     public DataResult<AnimeResponseDto> getById(Long id) {
+        AnimeResponseDto animeResponseDto=animeMapper.entitytoResponseDto(animeRepository.findById(id).orElseThrow());
         return null;
     }
 
     @Override
     public Result updateById(AnimeUpdateRequestDto animeUpdateRequestDto, Long id) {
+        AN
         return null;
     }
 }
