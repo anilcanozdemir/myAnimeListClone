@@ -48,7 +48,7 @@ public class AnimeManager implements AnimeService {
 
     @Override
     public Result updateById(AnimeUpdateRequestDto animeUpdateRequestDto) {
-        AN
+
         return null;
     }
 }
