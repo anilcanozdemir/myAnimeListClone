@@ -16,5 +16,5 @@ public interface CRUDService<EntityResponseDto, EntitySaveRequestDto, EntityUpda
 
     DataResult<EntityResponseDto> getById(Long id);
 
-    Result updateById(EntityUpdateRequestDto entityUpdateRequestDto, Long id);
+    Result update(EntityUpdateRequestDto entityUpdateRequestDto);
 }
