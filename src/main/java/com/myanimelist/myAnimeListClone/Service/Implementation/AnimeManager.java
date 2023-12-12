@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -46,9 +45,11 @@ public class AnimeManager implements AnimeService {
         return null;
     }
 
-    @Override
-    public Result updateById(AnimeUpdateRequestDto animeUpdateRequestDto) {
 
+
+    @Override
+    public Result update(AnimeUpdateRequestDto animeUpdateRequestDto) {
+        animeRepository.save(animeMapper.updateRequestDtoEntity(animeUpdateRequestDto));
         return null;
     }
 }
