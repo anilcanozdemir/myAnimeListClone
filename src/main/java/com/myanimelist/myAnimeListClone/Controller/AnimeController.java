@@ -41,7 +41,7 @@ public class AnimeController implements CRUDController<AnimeResponseDto, AnimeSa
     @Override
     @PostMapping("/updateById")
     public ResponseEntity<Result> update(@RequestBody AnimeUpdateRequestDto animeUpdateRequestDto) {
-        return ResponseEntity.ok().body(animeService.updateById(animeUpdateRequestDto));
+        return ResponseEntity.ok().body(animeService.update(animeUpdateRequestDto));
     }
 
     @Override
