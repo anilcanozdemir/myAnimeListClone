@@ -28,5 +28,7 @@ public class Anime extends Item {
     private List<Anime> sideStoryAnimes;
     private List<Anime> spinOfAnimes;
 
+    private String animeName;
+
 
 }
