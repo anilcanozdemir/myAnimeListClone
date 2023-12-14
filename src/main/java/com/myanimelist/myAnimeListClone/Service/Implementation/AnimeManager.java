@@ -1,17 +1,22 @@
 package com.myanimelist.myAnimeListClone.Service.Implementation;
 
+import com.myanimelist.myAnimeListClone.Core.Exception.AnimeNotFoundException;
 import com.myanimelist.myAnimeListClone.Core.ModelMapper.AnimeMapper;
 import com.myanimelist.myAnimeListClone.Core.Result.DataResult;
 import com.myanimelist.myAnimeListClone.Core.Result.Result;
+import com.myanimelist.myAnimeListClone.Core.Result.SuccesDataResult;
+import com.myanimelist.myAnimeListClone.Core.Result.SuccessResult;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeResponseDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeSaveRequestDto;
 import com.myanimelist.myAnimeListClone.DTOs.AnimeUpdateRequestDto;
+import com.myanimelist.myAnimeListClone.Entity.Item.Anime;
 import com.myanimelist.myAnimeListClone.Repository.AnimeRepository;
 import com.myanimelist.myAnimeListClone.Service.Contracts.AnimeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,27 +27,40 @@ public class AnimeManager implements AnimeService {
     @Override
     public Result add(AnimeSaveRequestDto animeSaveRequestDto) {
 
-        animeRepository.save(animeMapper.saveRequestDtoToEntity(animeSaveRequestDto));
-
-        return null;
+       Anime savedAnime = animeRepository.save(animeMapper.saveRequestDtoToEntity(animeSaveRequestDto));
+        return new SuccessResult("To city   :" + savedAnime.getId() +
+                " with id  : " + savedAnime.getAnimeName() +
+                "  airport added.");
     }
 
     @Override
     public DataResult<AnimeResponseDto> deleteByid(Long id) {
-        animeRepository.delete(animeRepository.findById(id).orElseThrow());
-        return null;
+        Optional<Anime> airport = animeRepository.findById(id);
+        airport.ifPresent(animeRepository::delete);
+        return new SuccesDataResult<>("Anime with id  " + id + "  deleted successfully.",
+                airport.map(animeMapper::entitytoResponseDto)
+                        .orElseThrow(() -> new AnimeNotFoundException(id)));
+
     }
 
     @Override
     public DataResult<List<AnimeResponseDto>> getAll() {
-        List<AnimeResponseDto> animeResponseDtos=animeRepository.findAll().stream().map(animeMapper::entitytoResponseDto).toList();
-        return null;
+        List<Anime> airportList = this.animeRepository.findAll();
+        if (airportList.isEmpty()) {
+            throw new AnimeListEmptyException();
+        }
+        return new SuccesDataResult<>("AnimeList successfully called.",
+                airportList.stream()
+                        .map(animeMapper::entitytoResponseDto)
+                        .toList());
     }
 
     @Override
     public DataResult<AnimeResponseDto> getById(Long id) {
-        AnimeResponseDto animeResponseDto=animeMapper.entitytoResponseDto(animeRepository.findById(id).orElseThrow());
-        return null;
+        Optional<Anime> airport = this.animeRepository.findById(id);
+        return new SuccesDataResult<>("Company with id " + id + "successfully called.",
+                airport.map(animeMapper::entitytoResponseDto)
+                        .orElseThrow(() -> new AnimeNotFoundException(id)));
     }
 
 
