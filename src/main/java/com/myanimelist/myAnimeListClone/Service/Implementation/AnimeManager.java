@@ -27,7 +27,7 @@ public class AnimeManager implements AnimeService {
     @Override
     public Result add(AnimeSaveRequestDto animeSaveRequestDto) {
 
-       Anime savedAnime = animeRepository.save(animeMapper.saveRequestDtoToEntity(animeSaveRequestDto));
+        Anime savedAnime = animeRepository.save(animeMapper.saveRequestDtoToEntity(animeSaveRequestDto));
         return new SuccessResult("To city   :" + savedAnime.getId() +
                 " with id  : " + savedAnime.getAnimeName() +
                 "  airport added.");
@@ -64,10 +64,13 @@ public class AnimeManager implements AnimeService {
     }
 
 
-
     @Override
+ 
     public Result update(AnimeUpdateRequestDto animeUpdateRequestDto) {
-        animeRepository.save(animeMapper.updateRequestDtoEntity(animeUpdateRequestDto));
-        return null;
+        Optional<Anime> animeOld = this.animeRepository.findById(animeUpdateRequestDto.id());
+        if (animeOld.isPresent()) {
+            animeRepository.save(animeMapper.updateRequestDtoEntity(animeUpdateRequestDto));
+        }
+        throw new AnimeNotFoundException(animeUpdateRequestDto.id());
     }
 }
