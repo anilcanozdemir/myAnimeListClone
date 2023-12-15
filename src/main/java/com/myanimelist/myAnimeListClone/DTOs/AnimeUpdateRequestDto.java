@@ -9,6 +9,9 @@ import com.myanimelist.myAnimeListClone.Enums.AnimeType;
 import com.myanimelist.myAnimeListClone.Enums.Demographic;
 import com.myanimelist.myAnimeListClone.Enums.ItemStatus;
 import com.myanimelist.myAnimeListClone.Enums.Theme;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -19,11 +22,13 @@ import java.util.Set;
 /**
  * DTO for {@link Anime}
  */
-@Value
+
 public record AnimeUpdateRequestDto(Long id, Integer episodeCount, ItemStatus itemStatus, Date startDate,
                                     Date finishDate, Set<Genre> genreSet, Theme theme, Demographic demographic,
                                     String snopsis, List<ItemCharacter> characters, List<Review> itemReviews,
                                     AnimeType animeType, Integer durationByMinute, Manga adaptionManga,
                                     List<Anime> alternativeVersionAnime, List<Anime> sideStoryAnimes,
                                     List<Anime> spinOfAnimes) implements Serializable {
+
+
 }

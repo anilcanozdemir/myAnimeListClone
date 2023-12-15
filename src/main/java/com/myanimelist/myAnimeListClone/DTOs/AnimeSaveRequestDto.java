@@ -19,7 +19,7 @@ import java.util.Set;
 /**
  * DTO for {@link Anime}
  */
-@Value
+
 public record AnimeSaveRequestDto(Integer episodeCount, ItemStatus itemStatus, Date startDate, Date finishDate,
                                   Set<Genre> genreSet, Theme theme, Demographic demographic, String snopsis,
                                   List<ItemCharacter> characters, List<Review> itemReviews, AnimeType animeType,
