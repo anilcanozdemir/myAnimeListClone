@@ -65,7 +65,7 @@ public class AnimeManager implements AnimeService {
 
 
     @Override
- 
+
     public Result update(AnimeUpdateRequestDto animeUpdateRequestDto) {
         Optional<Anime> animeOld = this.animeRepository.findById(animeUpdateRequestDto.id());
         if (animeOld.isPresent()) {
