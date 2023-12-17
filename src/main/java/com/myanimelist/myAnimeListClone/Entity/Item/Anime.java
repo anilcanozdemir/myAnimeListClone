@@ -23,6 +23,8 @@ public class Anime extends Item {
     private Integer durationByMinute;
 
     /*TODO Related AnimeList relation check*/
+    @ManyToOne
+    @JoinColumn(name = "adaption_manga_id")
     private Manga adaptionManga;
     private List<Anime> alternativeVersionAnime;
     private List<Anime> sideStoryAnimes;
