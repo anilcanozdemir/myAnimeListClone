@@ -13,7 +13,10 @@ public class AnimeMapper implements MapperProfile<AnimeResponseDto, AnimeSaveReq
      */
     @Override
     public AnimeResponseDto entitytoResponseDto(Anime anime) {
-        return null;
+        return new AnimeResponseDto(anime.getId(), anime.getEpisodeCount(),anime.getItemStatus(),anime.getStartDate(),anime.getFinishDate(),anime.getGenreSet(),anime.getTheme(),anime.getDemographic()
+        , anime.getSnopsis(), anime.getCharacters(),anime.getItemReviews(),anime.getAnimeType(),anime.getDurationByMinute(),
+                anime.getAdaptionManga(),anime.getAlternativeVersionAnime(),
+                anime.getSideStoryAnimes(),anime.getSpinOfAnimes());
     }
 
     @Override
